@@ -1,8 +1,29 @@
 # walkybot
 Programs and drivers for a Hexapod
 
-# Test phase
-## Serial communications:
+## Inverse Kinematics
+- Leg IK is implemented here based on material from https://oscarliang.com/inverse-kinematics-implementation-hexapod-robots/.
+- Body IK is being understood at the moment.
+
+For now, a "Wave" gait shall be implemented - the simplest kind of gait whereby legs move one by one.
+Next, a "Ripple" gait would be implemented, and a "Tripod" gait would be implemented last.
+
+#### Future Extensions
+- Negative feedback with accelerometer data
+- Dynamic gait selection based on input speed
+
+## GCS to Robot communications
+- Create a GUI for robot data:
+1. Battery Level, current consumption
+2. Controller inputs
+3. Accelerometer artificial horizon
+4. Selected gait
+
+# Content below is depreceated
+A previous iteration of this project intended to use a Raspberry Pi for computation and a Arduino for controlling servos. However, a pair of PCA9685 servo controllers have been employed instead, which removes the requirement for an Arduino.
+
+## Test phase
+### Serial communications:
 The servo angle calculations are done on the Pi and sent to the Arduino to be done.
 Communication can be bidirectional; for instance if there are sensors connected to the arduino that requires reading.
 _TODO_
@@ -17,12 +38,8 @@ _TODO_
 
 - Arduino side communications can be handled 'easily' with its own driver software. Functions in the sketch are ok, no need for an additional class.
 
-## Inverse Kinematics
-Servo angle calculations based on the desired end point of a foot.
-This requires a degree of maths.
-
-## Simulation in ROS
+### Simulation in ROS
 Self explanatory. Attempt to simulate the robot's motion fully (or partially?) in ROS here before deploying to actual hardware to minimise debugging time.
 
-## Add-Ons ?
+### Add-Ons ?
 Future work. The child in me wants to add a laser turret or something "*useful*" of that sort.
