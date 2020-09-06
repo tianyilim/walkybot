@@ -2,8 +2,8 @@
 Programs and drivers for a Hexapod
 
 ## Inverse Kinematics
-- Leg IK is implemented here based on material from https://oscarliang.com/inverse-kinematics-implementation-hexapod-robots/. A rough version currently exists within the `walkybot_testbench` notebook.
-- Body IK is being understood at the moment.
+- Leg and Body IK is implemented here based on material from https://oscarliang.com/inverse-kinematics-implementation-hexapod-robots/. A rough version currently exists within the `walkybot_testbench` notebook.
+- The `hexapod.py` define classes that describe a hexapod. It has yet to be rigourously tested.
 
 For now, a "Wave" gait shall be implemented - the simplest kind of gait whereby legs move one by one.
 Next, a "Ripple" gait would be implemented, and a "Tripod" gait would be implemented last.
